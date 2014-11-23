@@ -54,25 +54,25 @@ Four of them are qploted in the following:
 qplot(new_window, num_window, col=classe, data=training, alpha=0.1)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-31.png) 
+![plot of chunk unnamed-chunk-3](figure-html/unnamed-chunk-31.png) 
 
 ```r
 qplot(roll_belt, pitch_belt, col=classe, data=training, alpha=0.1)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-32.png) 
+![plot of chunk unnamed-chunk-3](figure-html/unnamed-chunk-32.png) 
 
 ```r
 qplot(roll_arm, pitch_arm, col=classe, data=training, alpha=0.1)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-33.png) 
+![plot of chunk unnamed-chunk-3](figure-html/unnamed-chunk-33.png) 
 
 ```r
 qplot(yaw_arm, total_accel_arm, col=classe, data=training, alpha=0.1)
 ```
 
-![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-34.png) 
+![plot of chunk unnamed-chunk-3](figure-html/unnamed-chunk-34.png) 
 
 After this plotting analysis, we adopt the following variables as explanatory variables:
 
