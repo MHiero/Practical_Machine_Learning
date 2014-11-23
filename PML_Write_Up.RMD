@@ -39,7 +39,7 @@ The raw training data is parted into training and the cross-validation data:
 ```{r}
 library(caret)
 set.seed(1234)
-inTrain <- createDataPartition(y=raw_training$classe,p=0.6, list=F)
+inTrain <- createDataPartition(y=raw_training_data$classe,p=0.6, list=F)
 training <- raw_training_data[inTrain, ]
 cv       <- raw_training_data[-inTrain, ]
 ```
