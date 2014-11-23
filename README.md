@@ -19,7 +19,7 @@ if (!file.exists("pml-training.csv")) {
               destfile="pml-training.csv", method="curl")
 }
 
-raw_training <- read.csv("pml-training.csv")
+raw_training_data <- read.csv("pml-training.csv")
 
 if (!file.exists("pml-testing.csv")) {
   download.file("https://d396qusza40orc.cloudfront.net/predmachlearn/pml-testing.csv", 
@@ -42,9 +42,9 @@ library(caret)
 
 ```r
 set.seed(1)
-inTrain <- createDataPartition(y=raw_training$classe,p=0.6, list=F)
-training <- raw_training[inTrain, ]
-cv       <- raw_training[-inTrain, ]
+inTrain <- createDataPartition(y=raw_training_data$classe,p=0.6, list=F)
+training <- raw_training_data[inTrain, ]
+cv       <- raw_training_data[-inTrain, ]
 ```
 
 To avoid the summary being too exhausting only some of the variables are plotted. 
@@ -132,7 +132,7 @@ missClass(cv$classe, predict(modFit, cv))
 The resulting model is used to make the predictions and write the results in several text files.
 
 ```r
-answers <- predict(modFit, testing)
+result <- predict(modFit, testing)
 pml_write_files = function(x){
   n = length(x)
   for(i in 1:n){
@@ -140,5 +140,5 @@ pml_write_files = function(x){
     write.table(x[i], file = filename, quote = FALSE, row.names = FALSE, col.names = FALSE)
   }
 }
-pml_write_files(answers)
+pml_write_files(result)
 ```
